@@ -1,0 +1,107 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model TypePlantation {
+  id        Int        @id @default(autoincrement())
+  nom       String     @unique
+  parcelles Parcelle[]
+}
+
+model Parcelle {
+  id                Int            @id @default(autoincrement())
+  nom               String         @unique
+  surface           Float
+  typePlantationNom String
+  typePlantation    TypePlantation @relation(fields: [typePlantationNom], references: [nom])
+  plantations       Plantation[]
+  ramassages        Ramassage[]
+}
+
+model Fruit {
+  id           Int           @id @default(autoincrement())
+  nom          String        @unique
+  typePlateaux TypePlateau[]
+  varietes     Variete[]
+}
+
+model Variete {
+  id           Int          @id @default(autoincrement())
+  nom          String       @unique
+  saisonnalite String
+  fruitNom     String
+  plantations  Plantation[]
+  fruit        Fruit        @relation(fields: [fruitNom], references: [nom])
+}
+
+model TypePlateau {
+  id         Int         @id @default(autoincrement())
+  nom        String      @unique
+  format     String
+  poids      Float
+  fruitNom   String
+  ramassages Ramassage[]
+  fruit      Fruit       @relation(fields: [fruitNom], references: [nom])
+}
+
+model TypePlant {
+  id          Int          @id @default(autoincrement())
+  nom         String       @unique
+  plantations Plantation[]
+}
+
+model Fournisseur {
+  id          Int          @id @default(autoincrement())
+  nom         String       @unique
+  plantations Plantation[]
+}
+
+model Pepinieriste {
+  id          Int          @id @default(autoincrement())
+  nom         String       @unique
+  plantations Plantation[]
+}
+
+model Ramassage {
+  id             Int         @id @default(autoincrement())
+  parcelleNom    String
+  date           DateTime
+  periodeJournee String
+  nombrePlateaux Int
+  typePlateauNom String
+  parcelle       Parcelle    @relation(fields: [parcelleNom], references: [nom])
+  typePlateau    TypePlateau @relation(fields: [typePlateauNom], references: [nom])
+}
+
+model Campagne {
+  id          Int          @id @default(autoincrement())
+  annee       Int          @unique
+  plantations Plantation[]
+}
+
+model Plantation {
+  id              Int          @id @default(autoincrement())
+  campagneAnnee   Int
+  etat            String
+  parcelleNom     String
+  nombrePlants    Int
+  varieteNom      String
+  typePlantNom    String
+  fournisseurNom  String
+  pepinieristeNom String
+  date            DateTime
+  passeportPhyto  String?
+  planParcelle    String?
+  campagne        Campagne     @relation(fields: [campagneAnnee], references: [annee])
+  fournisseur     Fournisseur  @relation(fields: [fournisseurNom], references: [nom])
+  parcelle        Parcelle     @relation(fields: [parcelleNom], references: [nom])
+  pepinieriste    Pepinieriste @relation(fields: [pepinieristeNom], references: [nom])
+  typePlant       TypePlant    @relation(fields: [typePlantNom], references: [nom])
+  variete         Variete      @relation(fields: [varieteNom], references: [nom])
+}
