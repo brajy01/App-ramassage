@@ -107,7 +107,10 @@ export function AppSidebar({ ...props }) {
                 ) : null}
               </SidebarMenuItem>
             ))}
-            <Button variant="destructive" className="mt-8">
+            <Button
+              variant="ghost"
+              className="mt-8 hover:bg-destructive hover:text-destructive-foreground"
+            >
               Se déconnecter
             </Button>
           </SidebarMenu>
