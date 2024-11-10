@@ -9,13 +9,14 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="flex justify-center items-center min-h-screen">
       <Card>
         <CardHeader>
-          <CardTitle>Page de connection</CardTitle>
+          <CardTitle>Connection au compte</CardTitle>
           <CardDescription>
             Entrer votre e-mail et votre mot de passe pour accéder à votre
             compte
@@ -37,7 +38,9 @@ export default function Home() {
           ></Input>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <Button>Valider</Button>
+          <Button asChild>
+            <Link href="/dashboard">Valider</Link>
+          </Button>
         </CardFooter>
       </Card>
     </div>

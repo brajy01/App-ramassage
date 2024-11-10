@@ -1,3 +1,4 @@
+import StatCard from "@/components/dashboard/statCard";
 import {
   Card,
   CardContent,
@@ -14,42 +15,26 @@ export default function Page() {
 
       <div className="flex flex-col">
         <div className="flex flex-col w-screen justify-between gap-3 md:flex-row md:w-auto md:m-2">
-          <Card className="hover:bg-gray-100">
-            <CardHeader>
-              <CardDescription>Total annuel fraise</CardDescription>
-              <CardTitle>400 000 kg</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>
-                <span className="text-green-500">12%</span> supérieur à
-                l&apos;année précédente
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="hover:bg-gray-100">
-            <CardHeader>
-              <CardDescription>Total annuel framboise</CardDescription>
-              <CardTitle>40 000 kg</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>
-                <span className="text-red-500">4%</span> inférieur à
-                l&apos;année précédente
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="hover:bg-gray-100">
-            <CardHeader>
-              <CardDescription>Total annuel global</CardDescription>
-              <CardTitle>440 000 kg</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p>
-                <span className="text-green-500">3%</span> supérieur à
-                l&apos;année précédente
-              </p>
-            </CardContent>
-          </Card>
+          <StatCard
+            fruit="fraise"
+            poids="400 000"
+            pourcentage="12"
+            isPositive={true}
+          />
+
+          <StatCard
+            fruit="framboise"
+            poids="40 000"
+            pourcentage="5"
+            isPositive={false}
+          />
+
+          <StatCard
+            fruit="global"
+            poids="440 000"
+            pourcentage="3"
+            isPositive={true}
+          />
         </div>
 
         {/* Table*/}
