@@ -15,6 +15,7 @@ import {
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 // This is sample data.
 const data = {
@@ -25,7 +26,7 @@ const data = {
       items: [
         {
           title: "Saisie de palette",
-          url: "#",
+          url: "/dashboard/saisie-palette",
         },
         {
           title: "Tableaux de récolte",
@@ -71,7 +72,7 @@ export function AppSidebar({ ...props }) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+              <Link href="/dashboard">
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <LayoutDashboard className="size-4" />
                 </div>
@@ -79,7 +80,7 @@ export function AppSidebar({ ...props }) {
                   <span className="font-semibold">Tableau de bord</span>
                   <span className="">Ets Brajon</span>
                 </div>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

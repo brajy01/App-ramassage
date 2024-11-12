@@ -32,7 +32,7 @@ const data = Array.from({ length: 31 }, (_, i) => {
 
 export default function YearlyChart() {
   return (
-    <Card className="m-2">
+    <Card>
       <CardHeader>
         <CardTitle>Ramassages annuel</CardTitle>
       </CardHeader>
@@ -56,7 +56,7 @@ export default function YearlyChart() {
               tick={{ angle: -90, textAnchor: "end" }}
             />
             <YAxis />
-            <Tooltip contentStyle={{ background: "white", border: "none" }} />
+            <Tooltip contentStyle={{ background: "white", borderRadius: 7 }} />
             <Line
               type="monotone"
               dataKey="total"

@@ -9,7 +9,7 @@ import {
 export default function StatCard({ fruit, poids, pourcentage, isPositive }) {
   return (
     <>
-      <Card className="hover:bg-gray-100 m-2">
+      <Card className="hover:bg-gray-100">
         <CardHeader>
           <CardDescription>Tonnage annuel {fruit}</CardDescription>
           <CardTitle>{poids} kg</CardTitle>

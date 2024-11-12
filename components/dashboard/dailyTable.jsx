@@ -20,13 +20,13 @@ import {
 export default function DailyTable({ date }) {
   return (
     <>
-      <Card className="mx-2">
+      <Card>
         <CardHeader>
           <CardTitle>Ramassages du jour</CardTitle>
           <CardDescription>{date}</CardDescription>
         </CardHeader>
         <CardContent>
-          <Card className="my-2">
+          <Card>
             <CardHeader>
               <CardTitle>Fraises</CardTitle>
             </CardHeader>
