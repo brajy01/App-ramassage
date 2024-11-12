@@ -1,5 +1,6 @@
 import DailyTable from "@/components/dashboard/dailyTable";
 import StatCard from "@/components/dashboard/statCard";
+import YearlyChart from "@/components/dashboard/yearlyGraph";
 import {
   Card,
   CardContent,
@@ -15,7 +16,7 @@ export default function Page() {
       {/* Cards*/}
 
       <div className="flex flex-col">
-        <div className="flex flex-col w-screen justify-between gap-3 md:flex-row md:w-auto md:m-2">
+        <div className="flex flex-col w-[100vh] justify-between gap-3 md:flex-row md:w-auto md:m-2">
           <StatCard
             fruit="fraise"
             poids="400 000"
@@ -41,7 +42,7 @@ export default function Page() {
         {/* Table*/}
         <DailyTable />
         {/* Graph*/}
-        <div>GRAPH</div>
+        <YearlyChart />
       </div>
     </>
   );
