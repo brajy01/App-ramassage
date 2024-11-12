@@ -112,7 +112,7 @@ export default function Page() {
             <Label className="font-bold" htmlFor="email">
               Poids total
             </Label>
-            <Input type="email" id="email" disabled />
+            <Input type="email" id="email" disabled placeholder="250 kg" />
           </div>
         </CardContent>
         <CardFooter className="flex justify-center">
