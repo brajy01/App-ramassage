@@ -34,43 +34,75 @@ export default function DailyTable({ date }) {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="w-[100px]">Invoice</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Method</TableHead>
-                    <TableHead className="text-right">Amount</TableHead>
+                    <TableHead>Parcelle</TableHead>
+                    <TableHead>Variété</TableHead>
+                    <TableHead>Type plateau</TableHead>
+                    <TableHead className="text-right">Quantité</TableHead>
+                    <TableHead className="text-right">Poids (kg)</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   <TableRow>
-                    <TableCell className="font-medium">INV001</TableCell>
-                    <TableCell>Paid</TableCell>
-                    <TableCell>Credit Card</TableCell>
-                    <TableCell className="text-right">$250.00</TableCell>
+                    <TableCell>Michel Serre</TableCell>
+                    <TableCell>Murano</TableCell>
+                    <TableCell>10 x 500 gr</TableCell>
+                    <TableCell className="text-right">50</TableCell>
+                    <TableCell className="text-right">250</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Vanne 1</TableCell>
+                    <TableCell>Cléry</TableCell>
+                    <TableCell>10 x 500 gr</TableCell>
+                    <TableCell className="text-right">100</TableCell>
+                    <TableCell className="text-right">500</TableCell>
+                  </TableRow>
+                  <TableRow className="font-bold">
+                    <TableCell>Total</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell className="text-right">150</TableCell>
+                    <TableCell className="text-right">750</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="my-2">
             <CardHeader>
-              <CardTitle>Framboises</CardTitle>
+              <CardTitle>Framboise</CardTitle>
             </CardHeader>
             <CardContent>
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead className="w-[100px]">Invoice</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Method</TableHead>
-                    <TableHead className="text-right">Amount</TableHead>
+                    <TableHead>Parcelle</TableHead>
+                    <TableHead>Variété</TableHead>
+                    <TableHead>Type plateau</TableHead>
+                    <TableHead className="text-right">Quantité</TableHead>
+                    <TableHead className="text-right">Poids (kg)</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   <TableRow>
-                    <TableCell className="font-medium">INV001</TableCell>
-                    <TableCell>Paid</TableCell>
-                    <TableCell>Credit Card</TableCell>
-                    <TableCell className="text-right">$250.00</TableCell>
+                    <TableCell>Gintrat</TableCell>
+                    <TableCell>Mapema</TableCell>
+                    <TableCell>10 x 125 gr barcaline</TableCell>
+                    <TableCell className="text-right">47</TableCell>
+                    <TableCell className="text-right">58.75</TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell>Gintrat</TableCell>
+                    <TableCell>Mapema</TableCell>
+                    <TableCell>10 x 125 gr carré</TableCell>
+                    <TableCell className="text-right">102</TableCell>
+                    <TableCell className="text-right">127.50</TableCell>
+                  </TableRow>
+                  <TableRow className="font-bold">
+                    <TableCell>Total</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell>-</TableCell>
+                    <TableCell className="text-right">149</TableCell>
+                    <TableCell className="text-right">186.25</TableCell>
                   </TableRow>
                 </TableBody>
               </Table>
