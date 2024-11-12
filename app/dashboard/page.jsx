@@ -1,3 +1,4 @@
+import DailyTable from "@/components/dashboard/dailyTable";
 import StatCard from "@/components/dashboard/statCard";
 import {
   Card,
@@ -38,8 +39,7 @@ export default function Page() {
         </div>
 
         {/* Table*/}
-        <div>TABLE</div>
-
+        <DailyTable />
         {/* Graph*/}
         <div>GRAPH</div>
       </div>
